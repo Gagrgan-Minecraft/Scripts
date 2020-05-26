@@ -836,8 +836,8 @@ function_tut loot2.sendChat(<light blue>Vaults contain <light green>Epic Loot<li
 command_test me.eventEntity(player)
 command_test me.sendChat(This Shit's Test!)
 
-command_why you doing this to me?.eventEntity(player)
-command_why you doing this to me?.sendChat(You are all wrong...)
+command_why you doing this to me.eventEntity(player)
+command_why you doing this to me.sendChat(You are all wrong...)
 
 
 
