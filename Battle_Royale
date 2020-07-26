@@ -1,844 +1,831 @@
-onPickUp_lapis lazuli.eventEntity(player)
-onPickUp_lapis lazuli.testFor(picked item)(lapis lazuli)(Magnetic Crystal)
-onPickUp_lapis lazuli.runFunction(remove lapis)(pick lazuli)
+command(mass data).eventEntity(player)
+command(mass data).testFor(permissions)
+command(mass data).sendChat(Successfully Imported!)
+command(mass data).runFunction(mass data)
 
-function_remove lapis.eventEntity(player)
-function_remove lapis.wait(tick)(1)
-function_remove lapis.removeItem(64)(lapis lazuli)(4)({display:{Name:"Magnetic Crystal"}})
+command(resourcepack).eventEntity(player)
+command(resourcepack).testFor(permissions)
+command(resourcepack).runFunction(resourcepack)
 
-function_pick lazuli.eventEntity(player)
-function_pick lazuli.teleport([coordinate=x])(125)([coordinate=z])
-function_pick lazuli.strikeLightning(fake)([coordinate=x])([coordinate=y])([coordinate=z])
-function_pick lazuli.runFunction(open glider)
+function(resourcepack).eventEntity(player)
+function(resourcepack).wait(second)(3)
+function(resourcepack).resourcepack(https://www.dropbox.com/s/b04i5eqtqwrh5ub/QualityArmoryV1.0.40.zip?dl=1)
 
-function_open glider.eventEntity(player)
-function_open glider.wait(tick)(5)
-function_open glider.glider()
+function(mass data).eventEntity(dummy)
+function(mass data).massData(multi)(\m16.gun; \m16.ammo; \m16.ammoMin; \m16.ammoMax; slotGun; slotAmmo; slotProp; chestName; \ak47.gun; \ak47.ammo; \ak47.ammoMin; \ak47.ammoMax)(m16; 556; 15; 20; 4; 13; 22; Loot Chest; ak47; 556; 12; 20)
+function(mass data).runFunction(mass data2)
 
-command_setup 1.eventEntity(player)
-command_setup 1.runFunction(setup)(change-mode ordinary')
+function(mass data2).eventEntity(entity)
+function(mass data2).wait(tick)(5)
+function(mass data2).massData(multi)(/itemPack.shotguns; /itemPack.assaultRifles; /itemPack.submachineGuns; /itemPack.pistols; /itemPack.snipers)(remington; m16, ak47; mp5k; glock; dragunov)
+function(mass data2).runFunction(mass data3)
 
-worldJoin.eventEntity(player)
-worldJoin.testFor(variable)(setup)(isn't set)
-worldJoin.testForFunction(world join)
-worldJoin.changeValue(set)(setup)(1)
-worldJoin.runfunction(setup)(world join)
+function(mass data3).eventEntity(entity)
+function(mass data3).wait(tick)(5)
+function(mass data3).massData(multi)(markSystem)(<gray>[<red>System<gray>]<light red>)
 
-function_world join.eventEntity(player)
-function_world join.wait(tick)(5)
-function_world join.runFunction(world join message)(tp-lobby)
+onPickUp(lapis lazuli).eventEntity(player)
+onPickUp(lapis lazuli).testFor(picked item)(lapis lazuli)(Magnetic Crystal)
+onPickUp(lapis lazuli).runFunction(remove lapis)(pick lazuli)
 
-function_world join message.eventEntity(all players)
-function_world join message.sendChat(<gray>[entity=player] <light gray>Joined '<purple>Battle Royale<light gray>')
+function(remove lapis).eventEntity(player)
+function(remove lapis).wait(tick)(1)
+function(remove lapis).removeItem(64)(lapis lazuli)(4)({display:{Name:"Magnetic Crystal"}})
+
+function(pick lazuli).eventEntity(player)
+function(pick lazuli).teleport([coordinate=x])(125)([coordinate=z])
+function(pick lazuli).strikeLightning(fake)([coordinate=x])([coordinate=y])([coordinate=z])
+function(pick lazuli).runFunction(open glider)
+
+function(open glider).eventEntity(player)
+function(open glider).wait(tick)(5)
+function(open glider).glider()
+
+command(setup 1).eventEntity(player)
+command(setup 1).runFunction(setup)(change-mode ordinary')
+
+worldJoin().eventEntity(player)
+worldJoin().testFor(variable)(setup)(isn't set)
+worldJoin().testForFunction(world join)
+worldJoin().changeValue(set)(setup)(1)
+worldJoin().runfunction(setup)(world join)(resourcepack)
+
+function(world join).eventEntity(player)
+function(world join).wait(tick)(5)
+function(world join).runFunction(world join message)(tp-lobby)
+
+function(world join message).eventEntity(all players)
+function(world join message).sendChat(<light green>[entity=player] <gray>Joined '<purple>Battle Royale<light gray>')
 
 #!!!#########!!!!!!!!!!!!#############!!!!!!!!!!!!!!!!!!!!!!!!##############
-function_setup.eventEntity(player)
-function_setup.runFunction(chest-slots)(ammo-pack setup)(gamerules)(guns-pack setup)(chests' NBT)(setup 1)(summon teams portal npc)
+function(setup).eventEntity(player)
+function(setup).runFunction(chest-slots)(ammo-pack setup)(gamerules)(guns-pack setup)(chests' NBT)(setup 1)(summon teams portal npc)
 ##########!!!!!!!!!!!!!!!!!#################!!!!!!!!!!!!!!!!!!#########
 
-function_setup 1.eventEntity(player)
-function_setup 1.runFunction(chest-nbt setup)(setup teams)
+function(setup 1).eventEntity(player)
+function(setup 1).runFunction(chest-nbt setup)(setup teams)
 
-command_setup teams.eventEntity(player)
-command_setup teams.testFor(gamemode)(creative)
-command_setup teams.runFunction(setup teams)
+command(setup teams).eventEntity(player)
+command(setup teams).testFor(permissions)
+command(setup teams).runFunction(setup teams)
 
-function_setup teams.eventEntity(player)
-function_setup teams.runFunction(setup team1)(setup team2)(setup team3)(setup team4)(setup team5)(setup team6)(setup team7)(setup team8)(setup team9)(setup team10)(setup team11)(setup team12)(setup team13)(setup team14)(setup team15)(setup team16)
+function(setup teams).eventEntity(player)
+function(setup teams).runFunction(setup team1)(setup team2)(setup team3)(setup team4)(setup team5)(setup team6)(setup team7)(setup team8)(setup team9)(setup team10)(setup team11)(setup team12)(setup team13)(setup team14)(setup team15)(setup team16)
 
-function_setup team1.eventEntity(player)
-function_setup team1.wait(tick)(1)
-function_setup team1.objectVariable(team name)(team1)
-function_setup team1.runfunction(create team)
+function(setup team1).eventEntity(player)
+function(setup team1).wait(tick)(1)
+function(setup team1).objectVariable(team name)(team1)
+function(setup team1).runfunction(create team)
 
-function_setup team2.eventEntity(player)
-function_setup team2.wait(tick)(4)
-function_setup team2.objectVariable(team name)(team2)
-function_setup team2.runfunction(create team)
+function(setup team2).eventEntity(player)
+function(setup team2).wait(tick)(4)
+function(setup team2).objectVariable(team name)(team2)
+function(setup team2).runfunction(create team)
 
-function_setup team3.eventEntity(player)
-function_setup team3.wait(tick)(7)
-function_setup team3.objectVariable(team name)(team3)
-function_setup team3.runfunction(create team)
+function(setup team3).eventEntity(player)
+function(setup team3).wait(tick)(7)
+function(setup team3).objectVariable(team name)(team3)
+function(setup team3).runfunction(create team)
 
-function_setup team4.eventEntity(player)
-function_setup team4.wait(tick)(10)
-function_setup team4.objectVariable(team name)(team4)
-function_setup team4.runfunction(create team)
+function(setup team4).eventEntity(player)
+function(setup team4).wait(tick)(10)
+function(setup team4).objectVariable(team name)(team4)
+function(setup team4).runfunction(create team)
 
-function_setup team5.eventEntity(player)
-function_setup team5.wait(tick)(13)
-function_setup team5.objectVariable(team name)(team5)
-function_setup team5.runfunction(create team)
+function(setup team5).eventEntity(player)
+function(setup team5).wait(tick)(13)
+function(setup team5).objectVariable(team name)(team5)
+function(setup team5).runfunction(create team)
 
-function_setup team6.eventEntity(player)
-function_setup team6.wait(tick)(16)
-function_setup team6.objectVariable(team name)(team6)
-function_setup team6.runfunction(create team)
+function(setup team6).eventEntity(player)
+function(setup team6).wait(tick)(16)
+function(setup team6).objectVariable(team name)(team6)
+function(setup team6).runfunction(create team)
 
-function_setup team7.eventEntity(player)
-function_setup team7.wait(tick)(19)
-function_setup team7.objectVariable(team name)(team7)
-function_setup team7.runfunction(create team)
+function(setup team7).eventEntity(player)
+function(setup team7).wait(tick)(19)
+function(setup team7).objectVariable(team name)(team7)
+function(setup team7).runfunction(create team)
 
-function_setup team8.eventEntity(player)
-function_setup team8.wait(tick)(22)
-function_setup team8.objectVariable(team name)(team8)
-function_setup team8.runfunction(create team)
+function(setup team8).eventEntity(player)
+function(setup team8).wait(tick)(22)
+function(setup team8).objectVariable(team name)(team8)
+function(setup team8).runfunction(create team)
 
-function_setup team9.eventEntity(player)
-function_setup team9.wait(tick)(25)
-function_setup team9.objectVariable(team name)(team9)
-function_setup team9.runfunction(create team)
+function(setup team9).eventEntity(player)
+function(setup team9).wait(tick)(25)
+function(setup team9).objectVariable(team name)(team9)
+function(setup team9).runfunction(create team)
 
-function_setup team10.eventEntity(player)
-function_setup team10.wait(tick)(28)
-function_setup team10.objectVariable(team name)(team10)
-function_setup team10.runfunction(create team)
+function(setup team10).eventEntity(player)
+function(setup team10).wait(tick)(28)
+function(setup team10).objectVariable(team name)(team10)
+function(setup team10).runfunction(create team)
 
-function_setup team11.eventEntity(player)
-function_setup team11.wait(tick)(31)
-function_setup team11.objectVariable(team name)(team11)
-function_setup team11.runfunction(create team)
+function(setup team11).eventEntity(player)
+function(setup team11).wait(tick)(31)
+function(setup team11).objectVariable(team name)(team11)
+function(setup team11).runfunction(create team)
 
-function_setup team12.eventEntity(player)
-function_setup team12.wait(tick)(34)
-function_setup team12.objectVariable(team name)(team12)
-function_setup team12.runfunction(create team)
+function(setup team12).eventEntity(player)
+function(setup team12).wait(tick)(34)
+function(setup team12).objectVariable(team name)(team12)
+function(setup team12).runfunction(create team)
 
-function_setup team13.eventEntity(player)
-function_setup team13.wait(tick)(37)
-function_setup team13.objectVariable(team name)(team13)
-function_setup team13.runfunction(create team)
+function(setup team13).eventEntity(player)
+function(setup team13).wait(tick)(37)
+function(setup team13).objectVariable(team name)(team13)
+function(setup team13).runfunction(create team)
 
-function_setup team14.eventEntity(player)
-function_setup team14.wait(tick)(40)
-function_setup team14.objectVariable(team name)(team14)
-function_setup team14.runfunction(create team)
+function(setup team14).eventEntity(player)
+function(setup team14).wait(tick)(40)
+function(setup team14).objectVariable(team name)(team14)
+function(setup team14).runfunction(create team)
 
-function_setup team15.eventEntity(player)
-function_setup team15.wait(tick)(43)
-function_setup team15.objectVariable(team name)(team15)
-function_setup team15.runfunction(create team)
+function(setup team15).eventEntity(player)
+function(setup team15).wait(tick)(43)
+function(setup team15).objectVariable(team name)(team15)
+function(setup team15).runfunction(create team)
 
-function_setup team16.eventEntity(player)
-function_setup team16.wait(tick)(46)
-function_setup team16.objectVariable(team name)(team16)
-function_setup team16.runfunction(create team)
+function(setup team16).eventEntity(player)
+function(setup team16).wait(tick)(46)
+function(setup team16).objectVariable(team name)(team16)
+function(setup team16).runfunction(create team)
 
-function_summon teams portal npc.eventEntity(random player)
-function_summon teams portal npc.summonEntity(1)(armor stand)({CustomName:"Team Select",CustomNameVisible:1,NoGravity:1b,Small:1,Marker:1b,Invisible:1,Invulnerable:1})(-659)(27)(-280)
+function(summon teams portal npc).eventEntity(random player)
+function(summon teams portal npc.summonEntity(1)(armor stand)({CustomName:"Team Select",CustomNameVisible:1,NoGravity:1b,Small:1,Marker:1b,Invisible:1,Invulnerable:1})(-659)(27)(-280)
 
-command_test summon teams-portal.eventEntity(player)
-command_test summon teams-portal.testFor(gamemode)(creative)
-command_test summon teams-portal.runFunction(summon teams portal npc)
+command(test summon teams-portal).eventEntity(player)
+command(test summon teams-portal).testFor(gamemode)(creative)
+command(test summon teams-portal).runFunction(summon teams portal npc)
 
-bedEnter.eventEntity(player)
-bedEnter.runFunction(beds disable message)(cancel bed enter event)(beds disable message2)
+bedEnter().eventEntity(player)
+bedEnter().runFunction(beds disable message)(cancel bed enter event)(beds disable message2)
 
-function_beds disable message.eventEntity(player)
-function_beds disable message.sendActionBar(<red>Beds Are Forbidden In This Mode.)
+function(beds disable message).eventEntity(player)
+function(beds disable message).sendActionBar(<red>Beds Are Forbidden In This Mode.)
 
-function_beds disable message2.eventEntity(player)
-function_beds disable message2.wait(second)(1)
-function_beds disable message2.sendActionBar(<red>Where'd You Hear, That You Could Sleep In BR?!)
+function(beds disable message2).eventEntity(player)
+function(beds disable message2).wait(second)(1)
+function(beds disable message2).sendActionBar(<red>Where'd You Hear, That You Could Sleep In BR?!)
 
-function_cancel bed enter event.eventEntity(player)
-function_cancel bed enter event.cancelEvent()
+function(cancel bed enter event).eventEntity(player)
+function(cancel bed enter event).cancelEvent()
 
-function_tp-lobby.eventEntity(player)
-function_tp-lobby.teleport(-662.5)(32)(-304.5)
+function(tp-lobby).eventEntity(player)
+function(tp-lobby).teleport(-662.5)(32)(-304.5)
 
-command_teleport lobby.eventEntity(player)
-command_teleport lobby.testFor(gamemode)(creative)
-command_teleport lobby.runFunction(tp-lobby)
+command(teleport lobby).eventEntity(player)
+command(teleport lobby).testFor(gamemode)(creative)
+command(teleport lobby).runFunction(tp-lobby)
 
-command_teleport game.eventEntity(player)
-command_teleport game.testFor(gamemode)(creative)
-command_teleport game.runFunction(teleport to game)
+command(teleport game).eventEntity(player)
+command(teleport game).testFor(gamemode)(creative)
+command(teleport game).runFunction(teleport to game)
 
-command_reset hp.eventEntity(player)
-command_reset hp.runFunction(reset hp)
+command(reset hp).eventEntity(player)
+command(reset hp).runFunction(reset hp)
 
-function_teleport to game.eventEntity(player)
-function_teleport to game.teleport(-793)(140)(-168)
-function_teleport to game.sendActionBar(<green>Teleported To Position)
-function_teleport to game.runFunction(teleport to game 2)
+function(teleport to game).eventEntity(player)
+function(teleport to game).teleport([worldborder center=x])(150)([worldborder center=z])
+function(teleport to game).sendActionBar(<green>Teleported To Position)
+function(teleport to game).runFunction(teleport to game 2)
 
-function_teleport to game 2.eventEntity(player)
-function_teleport to game 2.wait(tick)(1)
-function_teleport to game 2.glider()
+function(teleport to game 2).eventEntity(player)
+function(teleport to game 2).wait(tick)(1)
+function(teleport to game 2).glider()
 
-function_reset hp.eventEntity(player)
-function_reset hp.addPotionEffect(instant health)(1 second)(125)(true)
+function(reset hp).eventEntity(player)
+function(reset hp).addPotionEffect(instant health)(1 second)(125)(true)
 
-function_game pack.eventEntity(all players)
-function_game pack.wait(tick)(5)
-function_game pack.runFunction(reset-stats)(teleport to game)(reset hp)(add tools)(chests)(testfor team not set)
+function(game pack).eventEntity(all players)
+function(game pack).wait(tick)(5)
+function(game pack).runFunction(reset-stats)(reset worldborder)(teleport to game)(reset hp)(add tools)(chests)(testfor team not set)
 
-hungerLevelChange.eventEntity(player)
-hungerLevelChange.cancelEvent()
+hungerLevelChange().eventEntity(player)
+hungerLevelChange().cancelEvent()
 
-function_add tools.eventEntity(player)
-function_add tools.wait(tick)(1)
+function(add tools).eventEntity(player)
+function(add tools).wait(tick)(1)
 
-function_end game.eventEntity(all players)
-function_end game.resetPlayerData(everything)
-function_end game.sendTitle(Game Has Ended!)(light blue)(5 seconds)
-function_end game.sendSubtitle(Winner: [entity=player])(light blue)(5 seconds)
-function_end game.runFunction(tp-lobby)(reset-stats)
+function(end game).eventEntity(all players)
+function(end game).resetPlayerData(everything)
+function(end game).sendTitle(Game Has Ended!)(light blue)(5 seconds)
+function(end game).sendSubtitle(Winner: [entity=player])(light blue)(5 seconds)
+function(end game).runFunction(tp-lobby)(reset-stats)
 
-command_endgame.eventEntity(player)
-command_endgame.runFunction(end game)
+command(endgame).eventEntity(player)
+command(endgame).runFunction(end game)
 
-function_disable react.eventEntity(player)
-function_disable react.addPotionEffect(blindness)(999 days)(125)(true)
-function_disable react.runFunction(disable react 2)
+function(disable react).eventEntity(player)
+function(disable react).addPotionEffect(blindness)(999 days)(125)(true)
+function(disable react).runFunction(disable react 2)
 
-function_disable react 2.eventEntity(player)
-function_disable react 2.addPotionEffect(slowness)(999 days)(125)(true)
+function(disable react 2).eventEntity(player)
+function(disable react 2).addPotionEffect(slowness)(999 days)(125)(true)
 
-command_disable-react.eventEntity(player)
-command_disable-react.runFunction(disable react)
+command(disable-react).eventEntity(player)
+command(disable-react).runFunction(disable react)
 
-command_reset-stats.eventEntity(player)
-command_reset-stats.resetPlayerData(nbt)
+command(reset-stats).eventEntity(player)
+command(reset-stats).resetPlayerData(nbt)
 
-function_gamerule do-tile-drops.eventEntity(player)
-function_gamerule do-tile-drops.gamerule(do tile drops)(false)
+function(gamerule do-tile-drops).eventEntity(player)
+function(gamerule do-tile-drops).gamerule(do tile drops)(false)
 
-function_gamerule natural-regeneration.eventEntity(player)
-function_gamerule natural-regeneration.gamerule(natural regeneration)(false)
+function(gamerule natural-regeneration).eventEntity(player)
+function(gamerule natural-regeneration).gamerule(natural regeneration)(false)
 
-function_gamerule do-entity-drops.eventEntity(player)
-function_gamerule do-entity-drops.gamerule(do entity drops)(false)
+function(gamerule do-entity-drops).eventEntity(player)
+function(gamerule do-entity-drops).gamerule(do entity drops)(false)
 
-function_gamerule do-weather-cycle.eventEntity(player)
-function_gamerule do-weather-cycle.gamerule(do weather cycle)(true)
+function(gamerule do-weather-cycle).eventEntity(player)
+function(gamerule do-weather-cycle).gamerule(do weather cycle)(true)
 
-function_gamerule do-daylight-cycle.eventEntity(player)
-function_gamerule do-daylight-cycle.gamerule(do daylight cycle)(true)
+function(gamerule do-daylight-cycle).eventEntity(player)
+function(gamerule do-daylight-cycle).gamerule(do daylight cycle)(true)
 
-function_gamerule mob-griefing.eventEntity(player)
-function_gamerule mob-griefing.gamerule(mob griefing)(false)
+function(gamerule mob-griefing).eventEntity(player)
+function(gamerule mob-griefing).gamerule(mob griefing)(false)
 
-function_gamerule random-tick-speed.eventEntity(player)
-function_gamerule random-tick-speed.gamerule(random tick speed)(0)
+function(gamerule random-tick-speed).eventEntity(player)
+function(gamerule random-tick-speed).gamerule(random tick speed)(0)
 
-function_gamerules.eventEntity(player)
-function_gamerules.wait(ticks)(5)
-function_gamerules.runFunction(gamerule do-tile-drops)(gamerule natural-regeneration)(gamerule do-entity-drops)(gamerule do-weather-cycle)(gamerule do-daylight-cycle)(gamerule mob-griefing)(gamerule random-tick-speed)
+function(gamerules).eventEntity(player)
+function(gamerules).wait(ticks)(5)
+function(gamerules).runFunction(gamerule do-tile-drops)(gamerule natural-regeneration)(gamerule do-entity-drops)(gamerule do-weather-cycle)(gamerule do-daylight-cycle)(gamerule mob-griefing)(gamerule random-tick-speed)
 
-stepPressurePlate_light weighted pressure plate.eventEntity(player)
-stepPressurePlate_light weighted pressure plate.runFunction(parkour vic)
+stepPressurePlate(light weighted pressure plate).eventEntity(player)
+stepPressurePlate(light weighted pressure plate).runFunction(parkour vic)
 
 ####GUNS####
 !!!
-function_guns-pack setup.eventEntity(player)
-function_guns-pack setup.runFunction(reset guns-chest-loot)(game-mode ordinary)(game-mode shotguns)(game-mode rifles)(game-mode smg)(set player amount)
+command(guns setup).eventEntity(player)
+command(guns setup).testFor(permission)
+command(guns setup).sendChat(Imported Guns Successfully!)
+command(guns setup).runFunction(guns-pack setup)
 
-function_game-mode ordinary.eventEntity(player)
-function_game-mode ordinary.testFor(variable)(game_mode)(0)
-function_game-mode ordinary.runFunction(remington)
+function(guns-pack setup).eventEntity(player)
+function(guns-pack setup).runFunction(reset guns-chest-loot)(game-mode ordinary)(game-mode shotguns)(game-mode rifles)(game-mode smg)
 
-function_game-mode shotguns.eventEntity(player)
-function_game-mode shotguns.testFor(variable)(game_mode)(1)
-function_game-mode shotguns.runFunction(remington)
-!!!
-#RESET
-function_reset guns-chest-loot.eventEntity(player)
-function_reset guns-chest-loot.changeValue(set)(guns.chest.loot)([])
+function(game-mode ordinary).eventEntity(player)
+function(game-mode ordinary).testFor(variable)(game_mode)(0)
+function(game-mode ordinary).runFunction(remington)(m16)(ppsh41)
 
+function(game-mode shotguns).eventEntity(player)
+function(game-mode shotguns).testFor(variable)(game_mode)(1)
+function(game-mode shotguns).runFunction(remington)(spas12)
 
-#pump shotgun
+function(game-mode snipers).eventEntity(player)
+function(game-mode snipers).objectVariable(selectableMode)(snipers)
+function(game-mode snipers).runFunction(game mode selector)
 
-function_remington.eventEntity(player)
-function_remington.listValue(add)({Slot:[variable=guns.slot],id:"minecraft:diamond_axe",Damage:8,Count:1b,tag:{HideFlags:63,Unbreakable:1,display:{Name:"Pump Shotgun"}}},[random element=ammo.chest.shotgun_shell])(guns.chest.loot)
+function(game mode selector).eventEntity(entity)
+function(game mode selector).testFor(mass data)(data exists)(/itemPack.{selectableMode})
+function(game mode selector).testForFunction(mode doesn't exist)
+function(game mode selector).changeValue(set)(currentMode)({selectableMode})
 
-####AMMO####
+function(mode doesn't exist).eventEntity(all players)
+function(mode doesn't exist).sendChat([mass data value=markSystem] The Mode "{selectableMode}" Doesn't Exist. Please Contact The Owners Of The Area!)
 
-function_ammo-pack setup.eventEntity(player)
-function_ammo-pack setup.runFunction(small-ammo)(medium-ammo)(heavy-ammo)(shotgun-ammo)
+###THE CHEST BUILDER###
 
-function_small-ammo.eventEntity(player)
-function_small-ammo.listValue(add)({Slot:[variable=ammo.slot],id:"minecraft:diamond_axe",Damage:15,Count:20b,tag:{HideFlags:63,Unbreakable:1,display:{Name:"Small Bullets"}}})(ammo.chest.small_bullet)
+function(chest-nbt builder).eventEntity(player)
+function(chest-nbt builder).objectVariable(mode name)([variable=currentMode])
+function(chest-nbt builder).runFunction(chest-nbt builder1)
 
-function_medium-ammo.eventEntity(player)
-function_medium-ammo.listValue(add)({Slot:[variable=ammo.slot],id:"minecraft:diamond_axe",Damage:14,Count:15b,tag:{HideFlags:63,Unbreakable:1,display:{Name:"Medium Bullets"}}})(ammo.chest.medium_bullet)
+function(chest-nbt builder1).eventEntity(player)
+function(chest-nbt builder1).objectVariable(item comb)([massdata random element=/itemPack.{mode name}])
+function(chest-nbt builder1).runFunction(chest builder 2)
 
-function_heavy-ammo.eventEntity(player)
-function_heavy-ammo.listValue(add)({Slot:[variable=ammo.slot],id:"minecraft:diamond_axe",Damage:79,Count:3b,tag:{HideFlags:63,Unbreakable:1,display:{Name:"Heavy Bullets"}}})(ammo.chest.heavy_bullet)
+function(chest builder 2).eventEntity(player)
+function(chest builder 2).objectVariable(gun selected)([mass data value=\{item comb}.gun])
+function(chest builder 2).runFunction(chest builder 3)
 
-function_shotgun-ammo.eventEntity(player)
-function_shotgun-ammo.listValue(add)({Slot:[variable=ammo.slot],id:"minecraft:diamond_axe",Damage:16,Count:4b,tag:{HideFlags:63,Unbreakable:1,display:{Name:"Shotgun Shells"}}})(ammo.chest.shotgun_shell)
+function(chest builder 3).eventEntity(player)
+function(chest builder 3).objectVariable(ammo selected; limit-min; limit-max)([mass data value=\{item comb}.ammo]; [mass data value=\{item comb}.ammoMin]; [mass data value=\{item comb}.ammoMax])
+function(chest builder 3).runFunction(chest builder 4)
 
+function(chest builder 4).eventEntity(player)
+function(chest builder 4).blockNbt({CustomName:"[mass data value=chestName]",Items:[{Slot:[massdata value=slotGun],id:"minecraft:diamond_axe",Count:1b,Damage:[gun id={gun selected}],tag:[gun nbt={gun selected}]},{Slot:[massdata value=slotAmmo],id:"minecraft:diamond_axe",Count:[random number between={limit-min}; {limit-max}]b,Damage:[ammo id={ammo selected}],tag:[ammo nbt={ammo selected}]}]})({x-coord})({y-coord})({z-coord})
 
-####CHESTS####
+###CHEST BUILDER END###
 
-function_chest-slots.eventEntity(player)
-function_chest-slots.runFunction(guns gun-slot)(guns ammo-slot)(guns prop-slot)
-
-#
-
-function_guns gun-slot.eventEntity(player)
-function_guns gun-slot.changeValue(set)(guns.slot)(4)
-
-function_guns ammo-slot.eventEntity(player)
-function_guns ammo-slot.changeValue(set)(ammo.slot)(13)
-
-function_guns prop-slot.eventEntity(player)
-function_guns prop-slot.changeValue(set)(prop.slot)(22)
-
-######################################################
-
-function_chests' NBT.eventEntity(player)
-function_chests' NBT.changeValue(set)(chest_nbt.name)(CustomName:"Loot Chest")
-
-#!#!#!#!##!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!!#!#!#!#!#!#!#!!
-
-function_chests.eventEntity(player)
-function_chests.runFunction(colona-park chests)
-
-!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
-
-##COLONA PARK
-function_colona-park chests.eventEntity(player)
-function_colona-park chests.runFunction(colona-park chest1)(colona-park chest2)(colona-park chest3)(colona-park chest4)(colona-park chest5)(colona-park chest6)(colona-park chest7)(colona-park chest8)(colona-park chest9)(colona-park chest10)(colona-park chest11)(colona-park chest12)(colona-park chest13)(colona-park chest14)(colona-park chest15)
-
-{
-function_colona-park chest1 nbt.eventEntity(player)
-function_colona-park chest1 nbt.blockNbt([variable=chest-nbt_builder])(-754)(48)(-170)
-
-function_colona-park chest1.eventEntity(player)
-function_colona-park chest1.runFunction(chest-nbt builder)(colona-park chest1 nbt)
-}
-{
-function_colona-park chest2 nbt.eventEntity(player)
-function_colona-park chest2 nbt.blockNbt([variable=chest-nbt_builder])(-765)(43)(-191)
-
-function_colona-park chest2.eventEntity(player)
-function_colona-park chest2.runFunction(chest-nbt builder)(colona-park chest2 nbt)
-}
-{
-function_colona-park chest3 nbt.eventEntity(player)
-function_colona-park chest3 nbt.blockNbt([variable=chest-nbt_builder])(-800)(43)(-175)
-
-function_colona-park chest3.eventEntity(player)
-function_colona-park chest3.runFunction(chest-nbt builder)(colona-park chest3 nbt)
-}
-{
-function_colona-park chest4 nbt.eventEntity(player)
-function_colona-park chest4 nbt.blockNbt([variable=chest-nbt_builder])(-759)(48)(-155)
-
-function_colona-park chest4.eventEntity(player)
-function_colona-park chest4.runFunction(chest-nbt builder)(colona-park chest4 nbt)
-}
-{
-function_colona-park chest5 nbt.eventEntity(player)
-function_colona-park chest5 nbt.blockNbt([variable=chest-nbt_builder])(-759)(44)(-155)
-
-function_colona-park chest5.eventEntity(player)
-function_colona-park chest5.runFunction(chest-nbt builder)(colona-park chest5 nbt)
-}
-{
-function_colona-park chest6 nbt.eventEntity(player)
-function_colona-park chest6 nbt.blockNbt([variable=chest-nbt_builder])(-778)(43)(-151)
-
-function_colona-park chest6.eventEntity(player)
-function_colona-park chest6.runFunction(chest-nbt builder)(colona-park chest6 nbt)
-}
-{
-function_colona-park chest7 nbt.eventEntity(player)
-function_colona-park chest7 nbt.blockNbt([variable=chest-nbt_builder])(-731)(43)(-151)
-
-function_colona-park chest7.eventEntity(player)
-function_colona-park chest7.runFunction(chest-nbt builder)(colona-park chest7 nbt)
-}
-{
-function_colona-park chest8 nbt.eventEntity(player)
-function_colona-park chest8 nbt.blockNbt([variable=chest-nbt_builder])(-732)(49)(-188)
-
-function_colona-park chest8.eventEntity(player)
-function_colona-park chest8.runFunction(chest-nbt builder)(colona-park chest8 nbt)
-}
-{
-function_colona-park chest9 nbt.eventEntity(player)
-function_colona-park chest9 nbt.blockNbt([variable=chest-nbt_builder])(-739)(48)(-172)
-
-function_colona-park chest9.eventEntity(player)
-function_colona-park chest9.runFunction(chest-nbt builder)(colona-park chest9 nbt)
-}
-{
-function_colona-park chest10 nbt.eventEntity(player)
-function_colona-park chest10 nbt.blockNbt([variable=chest-nbt_builder])(-744)(43)(-222)
-
-function_colona-park chest10.eventEntity(player)
-function_colona-park chest10.runFunction(chest-nbt builder)(colona-park chest10 nbt)
-}
-{
-function_colona-park chest11 nbt.eventEntity(player)
-function_colona-park chest11 nbt.blockNbt([variable=chest-nbt_builder])(-748)(47)(-224)
-
-function_colona-park chest11.eventEntity(player)
-function_colona-park chest11.runFunction(chest-nbt builder)(colona-park chest11 nbt)
-}
-{
-function_colona-park chest12 nbt.eventEntity(player)
-function_colona-park chest12 nbt.blockNbt([variable=chest-nbt_builder])(-768)(45)(-176)
-
-function_colona-park chest12.eventEntity(player)
-function_colona-park chest12.runFunction(chest-nbt builder)(colona-park chest12 nbt)
-}
-{
-function_colona-park chest13 nbt.eventEntity(player)
-function_colona-park chest13 nbt.blockNbt([variable=chest-nbt_builder])(-730)(44)(-179)
-
-function_colona-park chest13.eventEntity(player)
-function_colona-park chest13.runFunction(chest-nbt builder)(colona-park chest13 nbt)
-}
-{
-function_colona-park chest14 nbt.eventEntity(player)
-function_colona-park chest14 nbt.blockNbt([variable=chest-nbt_builder])(-757)(47)(-161)
-
-function_colona-park chest14.eventEntity(player)
-function_colona-park chest14.runFunction(chest-nbt builder)(colona-park chest14 nbt)
-}
-{
-function_colona-park chest15 nbt.eventEntity(player)
-function_colona-park chest15 nbt.blockNbt([variable=chest-nbt_builder])(-757)(47)(-156)
-
-function_colona-park chest15.eventEntity(player)
-function_colona-park chest15.runFunction(chest-nbt builder)(colona-park chest15 nbt)
-}
-
-function_chest-nbt builder.eventEntity(player)
-function_chest-nbt builder.changeValue(set)(chest-nbt_builder)({[variable=chest_nbt.name],Items:[[random element=guns.chest.loot]]})
-
-function_chest-nbt setup.eventEntity(player)
-function_chest-nbt setup.wait(second)(3)
-function_chest-nbt setup.changeValue(set)(chest-nbt_builder)({[variable=chest_nbt.name],Items:[[random element=guns.chest.loot]]})
-
-
-
-
-command_test chests.eventEntity(player)
-command_test chests.runFunction(chests)
+command(test chests).eventEntity(player)
+command(test chests).runFunction(chests)
 
 
 ####LOBBY####
 
-function_parkour vic.eventEntity(player)
-function_parkour vic.testFor(location)(-661)(134)(-334)(-659)(137)(-336)
-function_parkour vic.sendChat(<green>You Made It!!!)
-function_parkour vic.runFunction(tp-lobby)
+function(parkour vic).eventEntity(player)
+function(parkour vic).testFor(location)(-661)(134)(-334)(-659)(137)(-336)
+function(parkour vic).sendChat(<green>You Made It!!!)
+function(parkour vic).runFunction(tp-lobby)
 
 #####
 
-command_trigger worldjoin.eventEntity(player)
-command_trigger worldjoin.trigger(worldJoin)
+command(trigger worldJoin).eventEntity(player)
+command(trigger worldJoin).trigger(worldJoin)
 
-function_change-mode ordinary.eventEntity(all players)
-function_change-mode ordinary.sendSubtitle(Mode 'Ordinary' Selected)(green)(3 seconds)
-function_change-mode ordinary.changeValue(set)(game_mode)(0)
+function(change-mode ordinary).eventEntity(all players)
+function(change-mode ordinary).sendSubtitle(Mode 'Ordinary' Selected)(green)(3 seconds)
+function(change-mode ordinary).changeValue(set)(game_mode)(0)
 
 ##
-function_change-mode ordinary'.eventEntity(player)
-function_change-mode ordinary'.changeValue(set)(game_mode)(0)
+function(change-mode ordinary').eventEntity(player)
+function(change-mode ordinary').changeValue(set)(game_mode)(0)
 ##
 
-function_change-mode shotguns.eventEntity(all players)
-function_change-mode shotguns.sendSubtitle(Mode 'Shotguns' Selected)(green)(3 seconds)
-function_change-mode shotguns.changeValue(set)(game_mode)(1)
+function(change-mode shotguns).eventEntity(all players)
+function(change-mode shotguns).sendSubtitle(Mode 'Shotguns' Selected)(green)(3 seconds)
+function(change-mode shotguns).changeValue(set)(game_mode)(1)
 
 ####GAME START TIMER#########################################################################################################
-function_start timer.eventEntity(player)
-function_start timer.testFor(variable)(start_timer_seconds)(is set)
-function_start timer.testForFunction(start timer setup)
-function_start timer.runFunction(start timer 5sec)
+function(start timer).eventEntity(player)
+function(start timer).testFor(variable)(start_timer_seconds)(is set)
+function(start timer).testForFunction(start timer setup)
+function(start timer).runFunction(start timer 5sec)
 
-function_start timer setup.eventEntity(player)
-function_start timer setup.changeValue(set)(start_timer_seconds)(120)
+function(start timer setup).eventEntity(player)
+function(start timer setup).changeValue(set)(start_timer_seconds)(120)
 
-function_start timer 5sec.eventEntity(player)
-function_start timer 5sec.testFor(variable)(start_timer_seconds)(-5)(higher)
-function_start timer 5sec.changeValue(add)(start_timer_seconds)(-5)
-function_start timer 5sec.sendSubtitle([variable=start_timer_seconds] Seconds Before Start)(green)(5 seconds)
-function_start timer 5sec.runFunction(start timer start)
+function(start timer 5sec).eventEntity(player)
+function(start timer 5sec).testFor(variable)(start_timer_seconds)(-5)(higher)
+function(start timer 5sec).changeValue(add)(start_timer_seconds)(-5)
+function(start timer 5sec).sendSubtitle([variable=start_timer_seconds] Seconds Before Start)(green)(5 seconds)
+function(start timer 5sec).runFunction(start timer start)
 
-function_start timer start.eventEntity(player)
-function_start timer start.wait(tick)(1)
-function_start timer start.testFor(variable)(start_timer_seconds)(0)
-function_start timer start.sendSubtitle(Mode Selection Has Started)(light blue)(3 seconds)
-function_start timer start.runFunction(spawn mode-starting_shulkers)
+function(start timer start).eventEntity(player)
+function(start timer start).wait(tick)(1)
+function(start timer start).testFor(variable)(start_timer_seconds)(0)
+function(start timer start).sendSubtitle(Mode Selection Has Started)(light blue)(3 seconds)
+function(start timer start).runFunction(spawn mode-starting_shulkers)
 
-command_start-timer.eventEntity(player)
-command_start-timer.runFunction(start timer start)
+command(start-timer).eventEntity(player)
+command(start-timer).runFunction(start timer start)
 
-every5Secs.eventEntity(random player)
-every5Secs.runFunction(start timer)
+every5Secs).eventEntity(player)
+every5Secs).runFunction(start timer)(worldborder interval)
 
+function(worldborder interval).eventEntity(player)
+function(worldborder interval).runFunction(interval2)(interval1)
 
-##NPCs###
-function_spawn mode-starting_shulkers.eventEntity(player)
-function_spawn mode-starting_shulkers.runFunction(spawn mode-npc-ordinary)(spawn mode-npc-shotguns)
+function(interval1).eventEntity(player)
+function(interval1).testFor(variable)(worldborder.interval)(0)(equal)
+function(interval1).changeValue(set)(worldborder.interval)(90)
+function(interval1).runFunction(change worldborder's size)
 
-function_spawn mode-npc-ordinary.eventEntity(player)
-function_spawn mode-npc-ordinary.summonEntity(1)(shulker)({CustomName:"Ordinary Mode",CustomNameVisible:1,AttachFace:0,Color:13b,Attributes:[{Name:generic.maxHealth,Base:200}],Health:200.0f,NoAI:1,Silent:1,DeathLootTable:"null"})(-687)(26)(-274)
+function(interval2).eventEntity(player)
+function(interval2).testFor(variable)(worldborder.interval)(0)(greater)
+function(interval2).changeValue(add)(worldborder.interval)(-5)
 
-function_spawn mode-npc-shotguns.eventEntity(player)
-function_spawn mode-npc-shotguns.summonEntity(1)(shulker)({CustomName:"Shotguns Mode",CustomNameVisible:1,AttachFace:0,Color:13b,Attributes:[{Name:generic.maxHealth,Base:200}],Health:200.0f,NoAI:1,Silent:1,DeathLootTable:"null"})(-690)(26)(-278)
+command(worldborder size).eventEntity(player)
+command(worldborder size).runFunction(change worldborder's size)
 
-##DEATHS##
+function(change worldborder's size).eventEntity(player)
+function(change worldborder's size).testFor(variable)(worldborder.size)(25)(greater)
+function(change worldborder's size).runFunction(message - worldborder moving)(worldborder type)(worldborder randomizer)(set worldborder size)
 
-shulkerDeath.eventEntity(entity)
-shulkerDeath.testFor(was killed)(true)
-shulkerDeath.runFunction(shotguns-mode NPC's death)(ordinary-mode NPC's death)
+function(worldborder type).eventEntity(player)
+function(worldborder type).runFunction(worldborder type1)(worldborder type2)
 
-function_shotguns-mode NPC's death.eventEntity(entity)
-function_shotguns-mode NPC's death.testFor(location)(-689)(25)(-277)(-691)(27)(-279)
-function_shotguns-mode NPC's death.runFunction(change-mode shotguns)(game pack)
+function(worldborder type1).eventEntity(player)
+function(worldborder type1).testFor(variable)(worldborder.size)(200)(greater)
+function(worldborder type1).changeValue(add)(worldborder.size)(-75)
 
-function_ordinary-mode NPC's death.eventEntity(entity)
-function_ordinary-mode NPC's death.testFor(location)(-686)(25)(-275)(-688)(27)(-273)
-function_ordinary-mode NPC's death.runFunction(change-mode ordinary)(game pack)
+function(worldborder type2).eventEntity(player)
+function(worldborder type2).testFor(variable)(worldborder.size)(225)(smaller)
+function(worldborder type2).runFunction(worldborder type2-1)
 
-function_kill mode NPCs.eventEntity(area)(20)(-684)(25)(-280)
-function_kill mode NPCs.killEntity(shulker)
+function(worldborder type2-1).eventEntity(player)
+function(worldborder type2-1).testFor(variable)(worldborder.size)(25)(greater)
+function(worldborder type2-1).changeValue(add)(worldborder.size)(-25)
+
+function(set worldborder size).eventEntity(player)
+function(set worldborder size).objectVariable(worldborder size)([variable=worldborder.size])
+function(set worldborder size).runFunction(set worldborder size0)
+
+function(set worldborder size0).eventEntity(player)
+function(set worldborder size0).worldborder(set size)([calculate=+{worldborder size}; *2])
+function(set worldborder size0).runFunction(set worldborder size1)
+
+function(set worldborder size1).eventEntity(player)
+function(set worldborder size1).wait(seconds)(5)
+function(set worldborder size1).worldborder(set size overtime)([variable=worldborder.size])(55 seconds)
+
+function(message - worldborder moving).eventEntity(all players)
+function(message - worldborder moving).sendActionBar(<light red>The Border Started Moving!)
+
+argCommand(mode).eventEntity(player)
+argCommand(mode).runFunction(game starter)
+
+function(game starter).eventEntity(player)
+function(game starter).
 
 ####PLAYER DEATHS####
 
-playerDeath.eventEntity(player)
-playerDeath.runFunction(death message -killed)(death message -died)(death-location set)
+playerDeath().eventEntity(player)
+playerDeath().runFunction(death message -killed)(death message -died)(death-location set)
 
-respawn.eventEntity(player)
-respawn.runFunction(respawn 1)
+respawn().eventEntity(player)
+respawn().wait(tick)(3)
+respawn().runFunction(respawn 1)(apply bunny-hop)
 
-function_respawn 1.eventEntity(player)
-function_respawn 1.runFunction(spectate engine)
+function(respawn 1).eventEntity(player)
+function(respawn 1).runFunction(spectate engine)
 
-function_death message -killed.eventEntity(all players)
-function_death message -killed.testFor(was killed)(true)
-function_death message -killed.sendChat(<purple>[entity=player]<light purple> Was Killed By <purple>[entity=attacker])
+function(death message -killed).eventEntity(all players)
+function(death message -killed).testFor(was killed)(true)
+function(death message -killed).sendChat(<purple>[entity=player]<light purple> Was Killed By <purple>[entity=attacker])
 
-function_death message -died.eventEntity(all players)
-function_death message -died.testFor(was killed)(false)
-function_death message -died.sendChat(<purple>[entity=player]<light purple> Died)
+function(death message -died).eventEntity(all players)
+function(death message -died).testFor(was killed)(false)
+function(death message -died).sendChat(<purple>[entity=player]<light purple> Died)
 
-function_death-location set.eventEntity(player)
-function_death-location set.runFunction(death location coord-x)(death location coord-y)(death location coord-z)
+function(death-location set).eventEntity(player)
+function(death-location set).runFunction(death location coord-x)(death location coord-y)(death location coord-z)
 
-function_death-location tp.eventEntity(player)
-function_death-location tp.teleport([score=death_location.x])([score=death_location.y])([score=death_location.z])
+command(tp death-loc).eventEntity(player)
+command(tp death-loc).runFunction(death-location tp)
 
-function_death location coord-x.eventEntity(player)
-function_death location coord-x.changeValue(set)([entity=player].death_location.x)([coordinate=x])
+function(death-location tp).eventEntity(player)
+function(death-location tp).objectVariable(player)([entity=player])
+function(death-location tp).runFunction(death-location tp1)
 
-function_death location coord-y.eventEntity(player)
-function_death location coord-y.changeValue(set)([entity=player].death_location.y)([coordinate=y])
+function(death-location tp1).eventEntity(player)
+function(death-location tp1).teleport([variable={player}.death_location.x])(150)([variable={player}.death_location.z])
+function(death-location tp1).runFunction(death-loc glider)
 
-function_death location coord-z.eventEntity(player)
-function_death location coord-z.changeValue(set)([entity=player].death_location.z)([coordinate=z])
+function(death-loc glider).eventEntity(player)
+function(death-loc glider).wait(tick)(1)
+function(death-loc glider).glider()
+
+function(death location coord-x).eventEntity(player)
+function(death location coord-x).changeValue(set)([entity=player].death_location.x)([coordinate=x])
+
+function(death location coord-y).eventEntity(player)
+function(death location coord-y).changeValue(set)([entity=player].death_location.y)([coordinate=y])
+
+function(death location coord-z).eventEntity(player)
+function(death location coord-z).changeValue(set)([entity=player].death_location.z)([coordinate=z])
 
 ####SPECTATE ENGINE ####
-function_spectate engine.eventEntity(player)
-function_spectate engine.runFunction(spectate engine 1)(spectate engine 2)
+function(spectate engine).eventEntity(player)
+function(spectate engine).runFunction(spectate engine 1)(spectate engine 2)
 
-function_spectate engine 1.eventEntity(player)
-function_spectate engine 1.testFor(variable)(game.options.last_standing)(true)
-function_spectate engine 1.changeValue(add)(game.players_alive)(-1)
-function_spectate engine 1.gamemode(3)
+function(spectate engine 1).eventEntity(player)
+function(spectate engine 1).testFor(variable)(game.options.last_standing)(true)
+function(spectate engine 1).changeValue(add)(game.players_alive)(-1)
+function(spectate engine 1).gamemode(3)
 
-function_spectate engine 2.eventEntity(player)
-function_spectate engine 2.testFor(variable)(game.options.last_standing)(false)
-function_spectate engine 2.runFunction(death-location tp)
+function(spectate engine 2).eventEntity(player)
+function(spectate engine 2).testFor(variable)(game.options.last_standing)(false)
+function(spectate engine 2).runFunction(death-location tp)
 
-function_set player amount.eventEntity(random player)
-function_set player amount.changeValue(set)(game.players_alive)([amount of=players])
+function(set player amount).eventEntity(random player)
+function(set player amount).changeValue(set)(game.players_alive)([amount of=players])
 
 ####TEAMS ENGINE####
-function_create team.eventEntity(player)
-function_create team.team(create)({team name})
+function(create team).eventEntity(player)
+function(create team.team(create)({team name})
 
-function_leave team.eventEntity(player)
-function_leave team.wait(tick)(1)
-function_leave team.team(leave)
+function(leave team).eventEntity(player)
+function(leave team).wait(tick)(1)
+function(leave team.team(leave)
 
-function_create team-list.eventEntity(player)
-function_create team-list.runFunction(solos)(duos)(squads)
+function(create team-list).eventEntity(player)
+function(create team-list).runFunction(solos)(duos)(squads)
 
 #
 
-function_join the team.eventEntity(player)
-function_join the team.runFunction(join team1)(join team2)
+function(join the team).eventEntity(player)
+function(join the team).runFunction(join team1)(join team2)
 
-function_join team1.eventEntity(player)
-function_join team1.runFunction(leave team)
+function(join team1).eventEntity(player)
+function(join team1).runFunction(leave team)
 
-function_join team2.eventEntity(player)
-function_join team2.wait(tick)(2)
-function_join team2.sendChat(<green>Joined Team <light green>{team name})
-function_join team2.team(join)({team name})
+function(join team2).eventEntity(player)
+function(join team2).wait(tick)(2)
+function(join team2).sendChat(<green>Joined Team <light green>{team name})
+function(join team2.team(join)({team name})
 
-function_team full.eventEntity(player)
-function_team full.sendChat(<light red>Can't Join Team <red>{team name}<light red>, Because It's Full)
+function(team full).eventEntity(player)
+function(team full).sendChat(<light red>Can't Join Team <red>{team name}<light red>, Because It's Full)
 
 #TEAM GUI#
-command_teams.eventEntity(player)
-command_teams.runFunction(team GUI before+wait)
+command(teams).eventEntity(player)
+command(teams).runFunction(team GUI before+wait)
 
-
+command(join team1).eventEntity(player)
+command(join team1).objectVariable(team name)(team1)
+command(join team1).runFunction(join the team)
 
 
 ##PLAYER DAMAGE##
-playerDamage.eventEntity(entity)
-playerDamage.runFunction(disable spawn damage)
+playerDamage).eventEntity(entity)
+playerDamage).runFunction(disable spawn damage)
 
-function_disable spawn damage.eventEntity(entity)
-function_disable spawn damage.testFor(has potion effect)(resistance)(125)
-function_disable spawn damage.runFunction(disable spawn dmg)(if dmg action in spawn)
+function(disable spawn damage).eventEntity(entity)
+function(disable spawn damage).testFor(has potion effect)(resistance)(125)
+function(disable spawn damage).runFunction(disable spawn dmg)(if dmg action in spawn)
 
-function_disable spawn dmg.eventEntity(entity)
-function_disable spawn dmg.cancelEvent()
+function(disable spawn dmg).eventEntity(entity)
+function(disable spawn dmg).cancelEvent()
 
-function_if dmg action in spawn.eventEntity(attacker)
-function_if dmg action in spawn.sendSubtitle(Can't Damage Players In Spawn)(light red)
-
+function(if dmg action in spawn).eventEntity(attacker)
+function(if dmg action in spawn).sendSubtitle(Can't Damage Players In Spawn)(light red)
 
 ##CHUNK CHANGE##
-chunkEnter.eventEntity(player)
-chunkEnter.runFunction(apply spawn resist)()
+chunkEnter).eventEntity(player)
+chunkEnter).runFunction(apply spawn resist)
 
+function(apply spawn resist).eventEntity(player)
+function(apply spawn resist).wait(tick)(3)
+function(apply spawn resist).testFor(chunk)(-42)(-20)
+function(apply spawn resist).objectVariable(resistance modifier)(125)
+function(apply spawn resist).runFunction(apply resistance)(apply bunny-hop)
 
-function_apply spawn resist.eventEntity(player)
-function_apply spawn resist.wait(tick)(3)
-function_apply spawn resist.testFor(chunk)(-42)(-20)
-function_apply spawn resist.objectVariable(resistance modifier)(125)
-function_apply spawn resist.runFunction(apply resistance)(apply bunny-hop)
+function(apply resistance).eventEntity(player)
+function(apply resistance).testFor(doesn't have potion effect)(resistance)
+function(apply resistance).addPotionEffect(resistance)(999 days)({resistance modifier})(true)
 
-function_apply resistance.eventEntity(player)
-function_apply resistance.testFor(doesn't have potion effect)(resistance)
-function_apply resistance.addPotionEffect(resistance)(999 days)({resistance modifier})(true)
+function(apply bunny-hop).eventEntity(player)
+function(apply bunny-hop).testFor(doesn't have potion effect)(jump boost)
+function(apply bunny-hop).addPotionEffect(jump boost)(999 days)(4)(true)
 
-function_apply bunny-hop.eventEntity(player)
-function_apply bunny-hop.testFor(doesn't have potion effect)(jump boost)
-function_apply bunny-hop.addPotionEffect(jump boost)(999 days)(4)(true)
+fallDamage).eventEntity(player)
+fallDamage).cancelEvent()
 
-fallDamage.eventEntity(player)
-fallDamage.cancelEvent()
+portalEnter(nether).eventEntity(player)
+portalEnter(nether).runFunction(port loc1)
 
-portalEnter_nether.eventEntity(player)
-portalEnter_nether.runFunction(port loc1)
+function(port loc1).eventEntity(player)
+function(port loc1).testFor(location)(-661)(26)(-279)(-658)(29)(-279)
+function(port loc1).teleport(-658)(9)(-310)
 
-function_port loc1.eventEntity(player)
-function_port loc1.testFor(location)(-661)(26)(-279)(-658)(29)(-279)
-function_port loc1.teleport(-658)(9)(-310)
+portalEnter(ender).eventEntity(player)
+portalEnter(ender).runFunction(return lobby)(tp alien-plane)(return to alien-plane portal)
 
+function(tp alien-plane).eventEntity(player)
+function(tp alien-plane).testFor(location)(-670)(26)(-42)(-670)(27)(-42)
+function(tp alien-plane).teleport(-544.5)(113)(13.5)
 
-portalEnter_ender.eventEntity(player)
-portalEnter_ender.runFunction(return lobby)(tp alien-plane)(return to alien-plane portal)
+function(return to alien-plane portal).eventEntity(player)
+function(return to alien-plane portal).testFor(location)(-547)(112)(14)(-546)(113)(13)
+function(return to alien-plane portal).teleport(-671)(27)(-42)
 
-function_tp alien-plane.eventEntity(player)
-function_tp alien-plane.testFor(location)(-670)(26)(-42)(-670)(27)(-42)
-function_tp alien-plane.teleport(-544.5)(113)(13.5)
+function(return lobby).eventEntity(player)
+function(return lobby).testFor(location)(-653)(8)(-317)(-664)(7)(-304)
+function(return lobby).runFunction(tp-lobby)
 
-function_return to alien-plane portal.eventEntity(player)
-function_return to alien-plane portal.testFor(location)(-547)(112)(14)(-546)(113)(13)
-function_return to alien-plane portal.teleport(-671)(27)(-42)
+function(portal teams).eventEntity(player)
+function(portal teams).testFor(location)(-653)(8)(-304)(-664)(7)(-317)
+function(portal teams).runFunction(portal team1)(portal team2)(portal team3)(portal team4)(portal team5)(portal team6)(portal team7)(portal team8)(portal team9)(portal team10)(portal team11)(portal team12)(portal team13)(portal team14)(portal team15)(portal team16)
 
-function_return lobby.eventEntity(player)
-function_return lobby.testFor(location)(-653)(8)(-317)(-664)(7)(-304)
-function_return lobby.runFunction(tp-lobby)
+function(portal team1).eventEntity(player)
+function(portal team1).testFor(location)(-662)(7)(-317)(-662)(8)(-317)
+function(portal team1).objectVariable(team name)(team1)
+function(portal team1).runFunction(join the team)
 
-function_portal teams.eventEntity(player)
-function_portal teams.testFor(location)(-653)(8)(-317)(-664)(7)(-304)
-function_portal teams.runFunction(portal team1)(portal team2)(portal team3)(portal team4)(portal team5)(portal team6)(portal team7)(portal team8)(portal team9)(portal team10)(portal team11)(portal team12)(portal team13)(portal team14)(portal team15)(portal team16)
+function(portal team2).eventEntity(player)
+function(portal team2).testFor(location)(-660)(7)(-317)(-660)(8)(-317)
+function(portal team2).objectVariable(team name)(team2)
+function(portal team2).runFunction(join the team)
 
-function_portal team1.eventEntity(player)
-function_portal team1.testFor(location)(-662)(7)(-317)(-662)(8)(-317)
-function_portal team1.objectVariable(team name)(team1)
-function_portal team1.runFunction(join the team)
+function(portal team3).eventEntity(player)
+function(portal team3).testFor(location)(-657)(7)(-317)(-657)(8)(-317)
+function(portal team3).objectVariable(team name)(team3)
+function(portal team3).runFunction(join the team)
 
-function_portal team2.eventEntity(player)
-function_portal team2.testFor(location)(-660)(7)(-317)(-660)(8)(-317)
-function_portal team2.objectVariable(team name)(team2)
-function_portal team2.runFunction(join the team)
+function(portal team4).eventEntity(player)
+function(portal team4).testFor(location)(-655)(7)(-317)(-655)(8)(-317)
+function(portal team4).objectVariable(team name)(team4)
+function(portal team4).runFunction(join the team)
 
-function_portal team3.eventEntity(player)
-function_portal team3.testFor(location)(-657)(7)(-317)(-657)(8)(-317)
-function_portal team3.objectVariable(team name)(team3)
-function_portal team3.runFunction(join the team)
+function(portal team5).eventEntity(player)
+function(portal team5).testFor(location)(-653)(7)(-315)(-653)(8)(-315)
+function(portal team5).objectVariable(team name)(team5)
+function(portal team5).runFunction(join the team)
 
-function_portal team4.eventEntity(player)
-function_portal team4.testFor(location)(-655)(7)(-317)(-655)(8)(-317)
-function_portal team4.objectVariable(team name)(team4)
-function_portal team4.runFunction(join the team)
+function(portal team6).eventEntity(player)
+function(portal team6).testFor(location)(-653)(7)(-313)(-653)(8)(-313)
+function(portal team6).objectVariable(team name)(team6)
+function(portal team6).runFunction(join the team)
 
-function_portal team5.eventEntity(player)
-function_portal team5.testFor(location)(-653)(7)(-315)(-653)(8)(-315)
-function_portal team5.objectVariable(team name)(team5)
-function_portal team5.runFunction(join the team)
+function(portal team7).eventEntity(player)
+function(portal team7).testFor(location)(-653)(7)(-308)(-653)(8)(-308)
+function(portal team7).objectVariable(team name)(team7)
+function(portal team7).runFunction(join the team)
 
-function_portal team6.eventEntity(player)
-function_portal team6.testFor(location)(-653)(7)(-313)(-653)(8)(-313)
-function_portal team6.objectVariable(team name)(team6)
-function_portal team6.runFunction(join the team)
+function(portal team8).eventEntity(player)
+function(portal team8).testFor(location)(-653)(7)(-306)(-653)(8)(-306)
+function(portal team8).objectVariable(team name)(team8)
+function(portal team8).runFunction(join the team)
 
-function_portal team7.eventEntity(player)
-function_portal team7.testFor(location)(-653)(7)(-308)(-653)(8)(-308)
-function_portal team7.objectVariable(team name)(team7)
-function_portal team7.runFunction(join the team)
+function(portal team9).eventEntity(player)
+function(portal team9).testFor(location)(-655)(7)(-304)(-655)(8)(-304)
+function(portal team9).objectVariable(team name)(team9)
+function(portal team9).runFunction(join the team)
 
-function_portal team8.eventEntity(player)
-function_portal team8.testFor(location)(-653)(7)(-306)(-653)(8)(-306)
-function_portal team8.objectVariable(team name)(team8)
-function_portal team8.runFunction(join the team)
+function(portal team10).eventEntity(player)
+function(portal team10).testFor(location)(-657)(7)(-304)(-657)(8)(-304)
+function(portal team10).objectVariable(team name)(team10)
+function(portal team10).runFunction(join the team)
 
-function_portal team9.eventEntity(player)
-function_portal team9.testFor(location)(-655)(7)(-304)(-655)(8)(-304)
-function_portal team9.objectVariable(team name)(team9)
-function_portal team9.runFunction(join the team)
+function(portal team11).eventEntity(player)
+function(portal team11).testFor(location)(-660)(7)(-304)(-660)(8)(-304)
+function(portal team11).objectVariable(team name)(team11)
+function(portal team11).runFunction(join the team)
 
-function_portal team10.eventEntity(player)
-function_portal team10.testFor(location)(-657)(7)(-304)(-657)(8)(-304)
-function_portal team10.objectVariable(team name)(team10)
-function_portal team10.runFunction(join the team)
+function(portal team12).eventEntity(player)
+function(portal team12).testFor(location)(-662)(7)(-304)(-662)(8)(-304)
+function(portal team12).objectVariable(team name)(team12)
+function(portal team12).runFunction(join the team)
 
-function_portal team11.eventEntity(player)
-function_portal team11.testFor(location)(-660)(7)(-304)(-660)(8)(-304)
-function_portal team11.objectVariable(team name)(team11)
-function_portal team11.runFunction(join the team)
+function(portal team13).eventEntity(player)
+function(portal team13).testFor(location)(-664)(7)(-306)(-664)(8)(-306)
+function(portal team13).objectVariable(team name)(team13)
+function(portal team13).runFunction(join the team)
 
-function_portal team12.eventEntity(player)
-function_portal team12.testFor(location)(-662)(7)(-304)(-662)(8)(-304)
-function_portal team12.objectVariable(team name)(team12)
-function_portal team12.runFunction(join the team)
+function(portal team14).eventEntity(player)
+function(portal team14).testFor(location)(-664)(7)(-308)(-664)(8)(-308)
+function(portal team14).objectVariable(team name)(team14)
+function(portal team14).runFunction(join the team)
 
-function_portal team13.eventEntity(player)
-function_portal team13.testFor(location)(-664)(7)(-306)(-664)(8)(-306)
-function_portal team13.objectVariable(team name)(team13)
-function_portal team13.runFunction(join the team)
+function(portal team15).eventEntity(player)
+function(portal team15).testFor(location)(-664)(7)(-313)(-664)(8)(-313)
+function(portal team15).objectVariable(team name)(team15)
+function(portal team15).runFunction(join the team)
 
-function_portal team14.eventEntity(player)
-function_portal team14.testFor(location)(-664)(7)(-308)(-664)(8)(-308)
-function_portal team14.objectVariable(team name)(team14)
-function_portal team14.runFunction(join the team)
+function(portal team16).eventEntity(player)
+function(portal team16).testFor(location)(-664)(7)(-315)(-664)(8)(-315)
+function(portal team16).objectVariable(team name)(team16)
+function(portal team16).runFunction(join the team)
 
-function_portal team15.eventEntity(player)
-function_portal team15.testFor(location)(-664)(7)(-313)(-664)(8)(-313)
-function_portal team15.objectVariable(team name)(team15)
-function_portal team15.runFunction(join the team)
+function(join later team1).eventEntity(player)
+function(join later team1).objectVariable(team name)(team1)
+function(join later team1).runFunction(join the team)
+function(join later team2).eventEntity(player)
+function(join later team2).objectVariable(team name)(team2)
+function(join later team2).runFunction(join the team)
+function(join later team3).eventEntity(player)
+function(join later team3).objectVariable(team name)(team3)
+function(join later team3).runFunction(join the team)
+function(join later team4).eventEntity(player)
+function(join later team4).objectVariable(team name)(team4)
+function(join later team4).runFunction(join the team)
+function(join later team5).eventEntity(player)
+function(join later team5).objectVariable(team name)(team5)
+function(join later team5).runFunction(join the team)
+function(join later team6).eventEntity(player)
+function(join later team6).objectVariable(team name)(team6)
+function(join later team6).runFunction(join the team)
+function(join later team7).eventEntity(player)
+function(join later team7).objectVariable(team name)(team7)
+function(join later team7).runFunction(join the team)
+function(join later team8).eventEntity(player)
+function(join later team8).objectVariable(team name)(team8)
+function(join later team8).runFunction(join the team)
+function(join later team9).eventEntity(player)
+function(join later team9).objectVariable(team name)(team9)
+function(join later team9).runFunction(join the team)
+function(join later team10).eventEntity(player)
+function(join later team10).objectVariable(team name)(team10)
+function(join later team10).runFunction(join the team)
+function(join later team11).eventEntity(player)
+function(join later team11).objectVariable(team name)(team11)
+function(join later team11).runFunction(join the team)
+function(join later team12).eventEntity(player)
+function(join later team12).objectVariable(team name)(team12)
+function(join later team12).runFunction(join the team)
+function(join later team13).eventEntity(player)
+function(join later team13).objectVariable(team name)(team13)
+function(join later team13).runFunction(join the team)
+function(join later team14).eventEntity(player)
+function(join later team14).objectVariable(team name)(team14)
+function(join later team14).runFunction(join the team)
+function(join later team15).eventEntity(player)
+function(join later team15).objectVariable(team name)(team15)
+function(join later team15).runFunction(join the team)
+function(join later team16).eventEntity(player)
+function(join later team16).objectVariable(team name)(team16)
+function(join later team16).runFunction(join the team)
 
-function_portal team16.eventEntity(player)
-function_portal team16.testFor(location)(-664)(7)(-315)(-664)(8)(-315)
-function_portal team16.objectVariable(team name)(team16)
-function_portal team16.runFunction(join the team)
-
-function_join later team1.eventEntity(player)
-function_join later team1.objectVariable(team name)(team1)
-function_join later team1.runFunction(join the team)
-function_join later team2.eventEntity(player)
-function_join later team2.objectVariable(team name)(team2)
-function_join later team2.runFunction(join the team)
-function_join later team3.eventEntity(player)
-function_join later team3.objectVariable(team name)(team3)
-function_join later team3.runFunction(join the team)
-function_join later team4.eventEntity(player)
-function_join later team4.objectVariable(team name)(team4)
-function_join later team4.runFunction(join the team)
-function_join later team5.eventEntity(player)
-function_join later team5.objectVariable(team name)(team5)
-function_join later team5.runFunction(join the team)
-function_join later team6.eventEntity(player)
-function_join later team6.objectVariable(team name)(team6)
-function_join later team6.runFunction(join the team)
-function_join later team7.eventEntity(player)
-function_join later team7.objectVariable(team name)(team7)
-function_join later team7.runFunction(join the team)
-function_join later team8.eventEntity(player)
-function_join later team8.objectVariable(team name)(team8)
-function_join later team8.runFunction(join the team)
-function_join later team9.eventEntity(player)
-function_join later team9.objectVariable(team name)(team9)
-function_join later team9.runFunction(join the team)
-function_join later team10.eventEntity(player)
-function_join later team10.objectVariable(team name)(team10)
-function_join later team10.runFunction(join the team)
-function_join later team11.eventEntity(player)
-function_join later team11.objectVariable(team name)(team11)
-function_join later team11.runFunction(join the team)
-function_join later team12.eventEntity(player)
-function_join later team12.objectVariable(team name)(team12)
-function_join later team12.runFunction(join the team)
-function_join later team13.eventEntity(player)
-function_join later team13.objectVariable(team name)(team13)
-function_join later team13.runFunction(join the team)
-function_join later team14.eventEntity(player)
-function_join later team14.objectVariable(team name)(team14)
-function_join later team14.runFunction(join the team)
-function_join later team15.eventEntity(player)
-function_join later team15.objectVariable(team name)(team15)
-function_join later team15.runFunction(join the team)
-function_join later team16.eventEntity(player)
-function_join later team16.objectVariable(team name)(team16)
-function_join later team16.runFunction(join the team)
-
-function_testfor team not set.eventEntity(player)
-function_testfor team not set.testfor(is in team)(false)
-function_testfor team not set.randomFunction(join later team1)(join later team2)(join later team3)(join later team4)(join later team5)(join later team6)(join later team7)(join later team8)(join later team9)(join later team10)(join later team11)(join later team12)(join later team13)(join later team14)(join later team15)(join later team16)
+function(testfor team not set).eventEntity(player)
+function(testfor team not set).testFor(is in team)(false)
+function(testfor team not set).randomFunction(join later team1)(join later team2)(join later team3)(join later team4)(join later team5)(join later team6)(join later team7)(join later team8)(join later team9)(join later team10)(join later team11)(join later team12)(join later team13)(join later team14)(join later team15)(join later team16)
 
 ###CITY vault###
 
-rightClick_eye of ender_Colona City's Keycard.eventEntity(player)
-rightClick_eye of ender_Colona City's Keycard.testFor(targeted coordinates)(-773)(34)(-326)
-rightClick_eye of ender_Colona City's Keycard.testForFunction(not required item)
-rightClick_eye of ender_Colona City's Keycard.sendActionBar(<green>Opening The Vault Door for <purple>Colona City)
-rightClick_eye of ender_Colona City's Keycard.runFunction(vault door1)
+rightClick(eye of ender)(Colona City's Keycard).eventEntity(player)
+rightClick(eye of ender)(Colona City's Keycard).testFor(targeted coordinates)(-773)(34)(-326)
+rightClick(eye of ender)(Colona City's Keycard).testForFunction(not required item)
+rightClick(eye of ender)(Colona City's Keycard).sendActionBar(<green>Opening The Vault Door for <purple>Colona City)
+rightClick(eye of ender)(Colona City's Keycard).runFunction(vault door1)
 
-function_not required item.eventEntity(player)
-function_not required item.sendActionBar(<light red>Inserted Item Is not The Requested <purple>Item!)
-function_not required item.cancelEvent()
+function(not required item).eventEntity(player)
+function(not required item).sendActionBar(<light red>Inserted Item Is not The Requested <purple>Item!)
+function(not required item).cancelEvent()
 
-function_vault door1.eventEntity(player)
-function_vault door1.runFunction(vlt1 dr1)(vlt1 dr2)(vlt1 dr3)(vlt1 dr4)(vlt1 dr5)(vlt1 dr6)(vlt1 dr7)(vlt1 dr8)(vlt1 dr9)
+function(vault door1).eventEntity(player)
+function(vault door1).runFunction(vlt1 dr1)(vlt1 dr2)(vlt1 dr3)(vlt1 dr4)(vlt1 dr5)(vlt1 dr6)(vlt1 dr7)(vlt1 dr8)(vlt1 dr9)
 
-function_vlt1 dr1.changeBlock(air)({})(-772)(35)(-327)
-function_vlt1 dr1.wait(second)(3)
-function_vlt1 dr2.changeBlock(air)({})(-772)(35)(-328)
-function_vlt1 dr2.wait(second)(3)
-function_vlt1 dr3.changeBlock(air)({})(-772)(35)(-329)
-function_vlt1 dr3.wait(second)(3)
-function_vlt1 dr4.changeBlock(air)({})(-772)(36)(-327)
-function_vlt1 dr4.wait(second)(6)
-function_vlt1 dr5.changeBlock(air)({})(-772)(36)(-328)
-function_vlt1 dr5.wait(second)(6)
-function_vlt1 dr6.changeBlock(air)({})(-772)(36)(-329)
-function_vlt1 dr6.wait(second)(6)
-function_vlt1 dr7.changeBlock(air)({})(-772)(37)(-327)
-function_vlt1 dr7.wait(second)(9)
-function_vlt1 dr8.changeBlock(air)({})(-772)(37)(-328)
-function_vlt1 dr8.wait(second)(9)
-function_vlt1 dr9.changeBlock(air)({})(-772)(37)(-329)
-function_vlt1 dr9.wait(second)(9)
+function(vlt1 dr1).changeBlock(air)({})(-772)(35)(-327)
+function(vlt1 dr1).wait(second)(3)
+function(vlt1 dr2).changeBlock(air)({})(-772)(35)(-328)
+function(vlt1 dr2).wait(second)(3)
+function(vlt1 dr3).changeBlock(air)({})(-772)(35)(-329)
+function(vlt1 dr3).wait(second)(3)
+function(vlt1 dr4).changeBlock(air)({})(-772)(36)(-327)
+function(vlt1 dr4).wait(second)(6)
+function(vlt1 dr5).changeBlock(air)({})(-772)(36)(-328)
+function(vlt1 dr5).wait(second)(6)
+function(vlt1 dr6).changeBlock(air)({})(-772)(36)(-329)
+function(vlt1 dr6).wait(second)(6)
+function(vlt1 dr7).changeBlock(air)({})(-772)(37)(-327)
+function(vlt1 dr7).wait(second)(9)
+function(vlt1 dr8).changeBlock(air)({})(-772)(37)(-328)
+function(vlt1 dr8).wait(second)(9)
+function(vlt1 dr9).changeBlock(air)({})(-772)(37)(-329)
+function(vlt1 dr9).wait(second)(9)
 
-command_tutorial looting.eventEntity(player)
-command_tutorial looting.sendChat(<light blue>Loot Can be Found Around The <purple>Colona Island<light blue>!)
-command_tutorial looting.runFunction(tut loot1)(tut loot2)
+command(tutorial looting).eventEntity(player)
+command(tutorial looting).sendChat(<light blue>Loot Can be Found Around The <purple>Colona Island<light blue>!)
+command(tutorial looting).runFunction(tut loot1)(tut loot2)
 
-function_tut loot1.eventEntity(player)
-function_tut loot1.wait(second)(3)
-function_tut loot1.sendChat(<light blue>Chests contain <light green>Normal Loot)
+function(tut loot1).eventEntity(player)
+function(tut loot1).wait(second)(3)
+function(tut loot1).sendChat(<light blue>Chests contain <light green>Normal Loot)
 
-function_tut loot2.eventEntity(player)
-function_tut loot2.wait(second)(6)
-function_tut loot2.sendChat(<light blue>Vaults contain <light green>Epic Loot<light blue> Head to the Vaults!)
+function(tut loot2).eventEntity(player)
+function(tut loot2).wait(second)(6)
+function(tut loot2).sendChat(<light blue>Vaults contain <light green>Epic Loot<light blue> Head to the Vaults!)
+
+command(trigger timer).eventEntity(player)
+command(trigger timer).testFor(gamemode)(creative)
+command(trigger timer).trigger(function(start timer 5sec)
+
+function(worldborder system).eventEntity(player)
+function(worldborder system).randomFunction( )
+
+command(worldborder randomizer).eventEntity(player)
+command(worldborder randomizer).runFunction(worldborder randomizer)
+
+function(worldborder randomizer).eventEntity(player)
+function(worldborder randomizer).objectVariable(x-coord1; z-coord1; x-coord2; z-coord2)([worldborder corner=pos1-x]; [worldborder corner=pos1-z]; [worldborder corner=pos2-x]; [worldborder corner=pos2-z])
+function(worldborder randomizer).runFunction(worldborder randomizer1)
+
+function(worldborder randomizer1).eventEntity(player)
+function(worldborder randomizer1).objectVariable(x-coord; z-coord)([random number between={x-coord1}; {x-coord2}]; [random number between={z-coord1}; {z-coord2}])
+function(worldborder randomizer1).runFunction(worldborder randomizer2)
+
+function(worldborder randomizer2).eventEntity(player)
+function(worldborder randomizer2).worldborder(set center)({x-coord})({z-coord})
 
 
-command_test me.eventEntity(player)
-command_test me.sendChat(This Shit's Test!)
 
-command_why you doing this to me.eventEntity(player)
-command_why you doing this to me.sendChat(You are all wrong...)
+function(reset worldborder).eventEntity(player)
+function(reset worldborder).changeValue(set)(worldborder.size)(800)
+function(reset worldborder).worldborder(set size)(800)
+function(reset worldborder).runFunction(reset worldborder1)
 
+function(reset worldborder1).eventEntity(player)
+function(reset worldborder1).worldborder(set center)(-777)(-158)
 
+command(chest test).eventEntity(player)
+command(chest test).runFunction(chest builder engine)
 
+function(chest builder engine).eventEntity(player)
+function(chest builder engine).testFor(list contains)(loadedChests)([coordinates=targeted-xyz])
+function(chest builder engine).testForFunction(chest builder engine_)
 
+function(chest builder engine_).eventEntity(player)
+function(chest builder engine_).objectVariable(x-coord; y-coord; z-coord)([coordinates=targeted-x]; [coordinates=targeted-y]; [coordinates=targeted-z])
+function(chest builder engine_).runFunction(chest builder engine2)
+
+function(chest builder engine2).eventEntity(player)
+function(chest builder engine2).listValue(add)([coordinates=targeted-xyz])(loadedChests)
+function(chest builder engine2).runFunction(chest-nbt builder)
+
+chestOpening().eventEntity(player)
+chestOpening().trigger(command<opening parenthesis>chest test<closing parenthesis>)
+
+blockPlace(chest).eventEntity(player)
+blockPlace(chest).testFor(permissions)
+blockPlace(chest).testForFunction(dis chest plac)
+
+function(dis chest plac).eventEntity(player)
+function(dis chest plac).cancelEvent()
+
+command(about me).eventEntity(player)
+command(about me).sendChat(Your name is [name=entity] and you're a player, lol - who doesn't know that. haha!)
+
+command(Jessica).eventEntity(player)
+command(Jessica).sendChat(<red><op>Jessica<cp>You imagined a Terrible demise?)
+command(Jessica).runFunction(demise)
+
+function(demise).eventEntity(player)
+function(demise).sendChat(And we're not letting you go!<cp><cp><op><op><cp><op>)
+
+command(tere).eventEntity(player)
+command(tere).sendChat(Lol?. What is this misery?)
