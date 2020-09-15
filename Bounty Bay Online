@@ -1,0 +1,22 @@
+worldJoin().eventEntity(player)
+worldJoin().runFunction(bbo join)
+
+function(bbo join).eventEntity(player)
+function(bbo join).runFunction(bbo join msg)
+
+function(bbo join msg).eventEntity(player)
+function(bbo join msg).sendChat([function=bbo syntax] You have joined <light purple>Bounty Bay Online<reset>!)
+
+command(info).eventEntity(player)
+command(info).runFunction(bbo info 1)(bbo info 2)(bbo info 3)
+
+function(bbo info 1).eventEntity(player)
+function(bbo info 1).sendChat([function=bbo info syntax] The Version of BBO is currently <light purple>[function=bbo version])
+
+function(bbo syntax).returnValue(<gray>[<gold>BBO<gray>]<reset>)
+
+function(bbo info syntax).returnValue(<gray>[<gold>BBO Info<gray>]<reset>)
+
+function(bbo version).returnValue(0.0.0)
+
+function(instance mallorca)
