@@ -19,4 +19,21 @@ function(bbo info syntax).returnValue(<gray>[<gold>BBO Info<gray>]<reset>)
 
 function(bbo version).returnValue(0.0.0)
 
-function(instance mallorca)
+# # # # I T E M S # # # #
+
+rightClick(chest)(Newbie's Weapon Pack).eventEntity(player)
+rightClick(chest)(Newbie's Weapon Pack).runFunction(Newbie's Weapon Pack)
+
+function(Newbie's Weapon Pack).eventEntity(player)
+function(Newbie's Weapon Pack).changeValue(set)([name=entity].)
+
+
+
+# # # # I N C R E A S E - S T A T S # # # #
+
+function(attribute modify).eventEntity(player)
+function(attribute modify).runFunction(attribute modify 2)
+
+function(attribute modify 2).eventEntity(player)
+function(attribute modify 2).changeValue(add)([entity=player].stat{attribute})({amount})
+function(attribute modify 2).sendChat([function=bbo info syntax] Edited Attribute <light purple>{attribute}<reset> By <light purple>{amount})
